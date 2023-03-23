@@ -25,15 +25,15 @@ function ProductCarousel() {
         loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> : (
 
             <Carousel pause='hover' className='btn-button carousel'>
-                {products?.map(product => (
+                {products?.map((product) => (
 
-                    <Carousel.Item key={product._id}>
-                        <Link to={`/product/${product._id}`}>
-                            <Image className='carousel-img' src={product.image} alt={product.name} fluid />
+                    <Carousel.Item key={product?._id}>
+                        <Link to={`/product/${product?._id}`}>
+                            <Image className='carousel-img' src={product?.image} alt={product?.name} fluid />
                         </Link>
 
                         <Carousel.Caption className='carousel-caption'>
-                            <h2>{product.name} (${product.price})</h2>
+                            <h2>{product?.name} (${product?.price})</h2>
                         </Carousel.Caption>
                     </Carousel.Item>
                 ))}
