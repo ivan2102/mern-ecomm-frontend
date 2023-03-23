@@ -52,7 +52,7 @@ const HomePage = ({ match }) => {
            <>
 
            <Row>
-               {products.map(product => (
+               {products?.map(product => (
 
                    <Col sm={12} md={6} lg={4} xl={3}>
                      <Product key={product._id} product={product} />
